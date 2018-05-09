@@ -1,0 +1,13 @@
+<ion-view title="Extra Information">
+    <a href="#/perfil/user-profile" class="left-b icono-back bkg-deg-brandly">
+      <img class="icono-back-brandly" src="img/icono-back.png">
+    </a>
+    <header class="bar bar-header bar-stable">
+        <h1 class="title">{{terms[actual]['nombre']}}</h1>
+    </header>
+    <ion-content class="has-header padding">
+      <div class="padding content-ext-information" ng-bind-html="terms[actual]['descripcion']">
+        
+      </div>
+    </ion-content>
+</ion-view>

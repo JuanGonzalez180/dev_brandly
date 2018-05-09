@@ -1,0 +1,71 @@
+<ion-view view-title="" 
+            on-drag-up="dragGeneralUp($event)" 
+            on-drag-down="dragGeneralDown($event)"
+            >
+
+    <a href="javascript:;" ng-click="irBrand()" class="left-b icono-back bkg-deg-brandly">
+      <img class="icono-cerrar" src="img/icono-cerrar.png">
+    </a>
+    <a href="javascript:;" ng-click="actionBrandProfilePost()" class="icono-back bkg-grid">
+      <img class="icono-cerrar" src="img/icono-more-grid.png">
+    </a>
+    
+    <ion-content class="" scroll="false">
+        <ion-slide-box class="bg-scan" on-slide-changed="gallerySlideChanged($index)">
+            <ion-slide ng-repeat="marca in brands">
+                <div class="box blue" ng-if="marca.type == 'image'">
+                    <div ng-if="current_image" class="bg-scan bg-watch" style="background-image: url({{marca.archivo}});"></div>
+                </div>
+                <div class="box blue" ng-if="marca.type == 'video'">
+                    <video class="video-post" 
+                          controls='controls' 
+                          poster="img/loading.jpg" 
+                          style="height: {{height}}">
+                      <source ng-src="{{marca.archivo | trusted}}" type='video/mp4'>
+                    </video>
+                </div>
+            </ion-slide>
+        </ion-slide-box>
+
+        <!-- <div class="bg-fondo-like animated rotateIn">
+            <img src="img/icono-like.png" class="icono-like">
+        </div> -->
+
+        <div class="mensajes-watch">
+            <img ng-src="{{brand.imagenPerfil}}"  class="img-logo-watch border-100">
+            <div class="cl-white">{{brand.comment}}<span class="cl-brandly"></span></div>
+            <div class="cl-white">
+                <img src="img/logo-views.png" class="logo-views">
+                {{brand.views}} Views
+            </div>
+        </div>
+
+        <div class="acciones-watch">
+            <div class="row">
+                <div class="col">
+                    <img class="img-accion" src="img/icono-likes.png"><br>
+                    <span class="cl-white">{{brand.likes}}</span> Likes
+                </div>
+                <div class="col" ng-click="comments()">
+                    <img class="img-accion" src="img/icono-comment.png"><br>
+                    <span class="cl-white">{{brand.comments}}</span> Comments
+                </div>
+                <div class="col" ng-click="compartir()">
+                    <img class="img-accion" src="img/icono-share.png"><br>
+                    Share
+                </div>
+                <div class="col col-10">
+                    <!-- <a href="javascript:;" ng-click="actionNotifications()" class="icono-tienda bkg-deg-brandly">
+                      <img class="icono-cerrar" src="img/icono-shop.png">
+                    </a> -->
+                </div>
+            </div>
+        </div>
+        <!-- <div ng-if="current_image" class="bg-scan bg-watch" style="background-image: url({{current_image}});"></div> -->
+        <!-- <div ng-if="!current_image" class="bg-scan bkg-deg-brandly"></div> -->
+    </ion-content>
+    
+    <div ng-include="'templates/drag-search.html'"></div>
+    <div ng-include="'templates/trending-now.html'"></div>
+
+</ion-view>

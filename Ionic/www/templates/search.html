@@ -1,0 +1,50 @@
+<ion-modal-view class="search search-modal">
+    <ion-view cache-view="false">
+    	<div class="bkg-deg-brandly btn-close-popup" ng-click="cerrarModal()">
+    		<img class="icono-cerrar" src="img/icono-cerrar.png">
+    	</div>
+	    <div class="padding">
+	 		<div class="buscador">
+	 			<div class="bkg-deg-brandly icono-buscador ">
+	 				<img class="icono-buscador-w" src="img/icono-buscador.png">
+	 			</div>
+	 			<div class="input-buscador"> 
+	 				<input type="text" placeholder="which brand are you?" ng-change="searchBrand()" ng-model="data.search"> 
+	 			</div>
+	 			<div class="cerrar-buscador" ng-click="limpiarBuscador()">
+	 				<img class="icono-cerrar-buscador" src="img/icono-cerrar-buscador.png">
+	 			</div>
+	 		</div>
+
+	 		<div class="mg-buscador"></div>
+	 		<div class="tcenter cl-white">
+	 			<h3 class="cl-white">{{data.matches}} MATCHES</h3>
+	 			{{data.people}} People - {{data.brands}} Brands
+	 		</div>
+
+	 		<div class="popup-which padding">
+		 		<div class="scroll-elements">
+		 			<div class="list list-buscador">
+		 				<a ng-click="irWatchPost(marca)" class="item item-avatar" href="javascript:;" ng-repeat="marca in data.marcas">
+		 					<img ng-src="{{marca.img}}">
+		 					<h2 class="ft-ms">{{marca.name}}</h2>
+		 					<small>{{marca.follow}}</small>
+		 					<div class="follow" ng-if="!marca.following" ng-click="follow(marca, 1)">
+		 						FOLLOW <i class="icon ion-chevron-right"></i>
+		 					</div>
+		 					<div class="follow following" ng-if="marca.following" ng-click="follow(marca, 0)">
+		 						FOLLOWING <i class="icon ion-chevron-right"></i>
+		 					</div>
+		 				</a>
+		 			</div>
+		 		</div>
+	 		</div>
+	 	</div>
+	 	<!-- <ion-infinite-scroll ng-if="traerMas"
+	 		on-infinite="cargarMasBrands()"
+	 		distance="10%"
+	 		icon="ik-logo"
+	 		use-content="true">
+	 	</ion-infinite-scroll> -->
+    </ion-view>
+</ion-modal-view>

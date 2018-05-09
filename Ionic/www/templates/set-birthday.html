@@ -1,0 +1,28 @@
+<ion-view title="IonicVision">
+	<a href="#/perfil/user-profile" class="left-b icono-back bkg-deg-brandly">
+	  <img class="icono-back-brandly" src="img/icono-back.png">
+	</a>
+    <header class="bar bar-header bar-stable">
+        <h1 class="title">Settings</h1>
+    </header>
+    <ion-content class="has-header">
+		<div class="title-seccion-set">
+			Birthday
+		</div>
+
+		<!-- {mondayFirst: true, weeksList: ["D", "L", "M", "M", "J", "V", "S"],  } -->
+		<date-picker data='{mondayFirst: true, weeksList: ["D", "L", "M", "M", "J", "V", "S"]}'></date-picker>
+
+		<div class="padding tcenter">
+			<ul class="list list-buttons list-buttons-onb">
+				<li class="item">
+					<!--  href="#/perfil/user-profile"  -->
+				  <a ng-click="open()" class="button button-brandly bkg-deg-brandly cl-white btn-login">
+				    DONE
+				  </a>
+				</li>
+			</ul>
+		</div>
+
+    </ion-content>
+</ion-view>

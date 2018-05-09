@@ -1,0 +1,68 @@
+<ion-view title="IonicVision">
+    <ion-content class="">
+      <div id="marca" class="fondo-marca mod" style="background-image: url({{user.imgPortada}});">
+        <a href="javascript:;" ng-click="settingProfile()" class="left-b icono-back sin-pad">
+          <img src="img/icono-settings.png">
+        </a>
+        <a href="javascript:;" ng-click="actionExplore1()" class="icono-back sin-pad">
+          <img src="img/icono-explorer.png">
+        </a>
+
+        <div class="tcenter mb-20">
+          <div class="pro-camera" ng-class="{ 'pro-save' : buttonSave > 0 }">
+            <img ng-src="{{user.imgPerfil}}" class="img-logo-watch profile profile-peq">
+            <div class="icon-images camera-icon-option" on-tap="editarImagen()"></div>
+            <div class="icon-images save-icon-image" on-tap="guardarImagen()"></div>
+            <div class="icon-images cancel-icon-image" on-tap="cancelarImagen()"></div>
+          </div>
+          <div class="title">{{user.name}}</div>
+
+          <ul class="menu-brand">
+              <li class="active">{{}} <br> Post</li>
+              <li>{{}} <br> Followers</li>
+              <li>{{}} <br> Followed</li>
+          </ul>
+        </div>
+      </div>
+
+      <!--<div class="ele-explore">
+        <div class="ele-header ele-center">
+          <div class="ele-imagen">
+            <img src="img/br-nike.jpg">
+          </div>
+          <div class="ele-content">
+            <div class="ele-tit">Nike</div>
+          </div>
+          <div class="ele-button">
+            <div class="date">
+              <img src="img/icono-date.png">
+              <span>Today 20 min</span>
+            </div>
+          </div>
+        </div>
+        <div class="padding-both">
+          <p>Lorem ipsum dolor sit amet, comerdi consectetuer adipiscing elit. </p>
+        </div>
+
+        <div class="ele-imgs imgs-3">
+          <img src="img/img-explore-1.png"><img src="img/img-explore-1.png"><img src="img/img-explore-1.png">
+        </div>
+
+        <div class="ele-acciones acciones-watch">
+            <div class="row">
+                <div class="col">
+                    <b>8</b><br> Likes
+                </div>
+                <div class="col" ng-click="comments()">
+                    <b>5</b><br> Comments
+                </div>
+                <div class="col" ng-click="compartir()">
+                    <img class="img-accion" src="img/icono-share-2.png"><br>
+                    Share
+                </div>
+            </div>
+        </div>
+      </div>-->
+
+    </ion-content>
+</ion-view>

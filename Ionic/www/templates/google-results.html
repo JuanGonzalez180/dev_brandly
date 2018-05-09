@@ -1,0 +1,26 @@
+	<div class="bkg-deg-brandly btn-close-popup" ng-click="cerrarPopupBrands()">
+		<img class="icono-cerrar" src="img/icono-cerrar.png">
+	</div>
+
+	<h1 class="title">Brands</h1>
+
+	<div class="scroll-elements">
+		<div class="list list-buscador">
+			<a class="item item-avatar" href="javascript:;" 
+				ng-repeat="marca in itemsLogos" 
+				ng-click="cerrarPopupBrands(); irWatchPost(marca);"
+				ng-if="marca.description || marca.name">
+
+				<img ng-src="{{marca.img}}">
+				<h2 class="ft-ms" ng-if="!marca.description">{{marca.name}}</h2>
+				<h2 class="ft-ms" ng-if="marca.description">{{marca.description}}</h2>
+				<i class="icon ion-chevron-right icon-accessory"></i>
+			</a>
+		</div>
+		<div class="tcenter padding" ng-if="!itemsLogos && notfound">
+			{{messages.notfound}}
+		</div>
+		<div class="tcenter padding" ng-if="!itemsLogos && notfoundServer">
+			{{messages.notfoundServer}}
+		</div>
+	</div>

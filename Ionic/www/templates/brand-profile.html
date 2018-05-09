@@ -1,0 +1,73 @@
+<ion-view title="IonicVision">
+    <!-- <a href="javascript:;" ng-click="actionBack()" class="left-b icono-back sin-pad">
+      <img src="img/icono-profile-izq.png">
+    </a> -->
+    <a href="javascript:;" ng-click="actionBrandProfilePost()" class="icono-back sin-pad">
+      <img src="img/icono-profile-der.png">
+    </a>
+    
+    <ion-content class="">
+    	<div id="marca" class="fondo-marca mod" style="background-image: url(img/image-perfil-brand.jpg);">
+    		<div class="tcenter">
+    			<img src="img/logo-watch-dos.png" class="img-logo-watch profile active">
+    			<div class="title">Calvin Klein</div>
+    			<div class="ultimo">Followed by Nicole <b>+ 12 other friends.</b></div>
+
+                <ul class="menu-brand">
+                    <li class="active">11.325 <br> Resume</li>
+                    <li>0.98K <br> Followers</li>
+                    <li>0.98K <br> Followed</li>
+                </ul>
+    		</div>
+    	</div>
+
+    	<div class="">
+            <div class="title-profile">Common people</div>
+            <div class="productos-cart">
+              <div class="content-productos list content-cart-productos list-brand-profile">
+                <div href="javascript:;"
+                  class="producto producto-valores img-principal" 
+                  ng-repeat="value in [1,2,3,4,5,6]"
+                  >
+                    <div class="img-sbrand">
+                      <img src="img/perfil-brand-scan-{{value}}.jpg">
+                    </div>
+                    <div>Joseph</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="title-profile">Brandlers</div>
+            <div class="productos-cart">
+              <div class="content-productos list content-cart-productos list-brand-profile">
+                <div href="javascript:;"
+                  class="producto producto-valores img-principal" 
+                  ng-repeat="value in [1,2,3,4,5,6]"
+                  >
+                    <div class="img-sbrand active">
+                      <img src="img/perfil-brand-scan-{{value}}.jpg">
+                    </div>
+                    <div>Joseph</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="title-profile">Other people</div>
+            <div class="productos-cart">
+              <div class="content-productos list content-cart-productos list-brand-profile">
+                <div href="javascript:;"
+                  class="producto producto-valores img-principal" 
+                  ng-repeat="value in [1,2,3,4,5,6]"
+                  >
+                    <div class="img-sbrand">
+                      <img src="img/perfil-brand-scan-{{value}}.jpg">
+                    </div>
+                    <div>Joseph</div>
+                </div>
+              </div>
+            </div>
+
+    	</div>
+
+    </ion-content>
+</ion-view>

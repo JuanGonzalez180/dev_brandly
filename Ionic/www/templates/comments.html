@@ -1,0 +1,53 @@
+<ion-view view-title="" 
+			on-drag-up="dragGeneralUp($event)" 
+			on-drag-down="dragGeneralDown($event)" 
+			on-drag-left="dragPerfilLeft($event)" 
+			on-drag-right="dragPerfilRight($event)" 
+      		>
+	<a ng-click="cerrarPopupComments()" class="left-b icono-back bkg-deg-brandly">
+	  <img class="icono-back-brandly" src="img/icono-back.png">
+	</a>
+	<header class="bar bar-header bar-stable">
+        <h1 class="title">Comments</h1>
+    </header>
+	<ion-content class="has-header has-footer has-foomod" on-drag-up="dragTrendingUp($event)" on-drag-down="dragTrendingDown($event)" >
+		<div class="list list-comment">
+			<a class="item item-avatar" href="javascript:;">
+				<img src="img/comment.png">
+				<h2>@JamesDeal</h2>
+				<p>Lorem ipsum dolor sit amet, comerdiconse ctetuer adipiscing elit. commodo ligula eget dolor. dolor sit amet</p>
+				<div class="date">
+					<img src="img/icono-date.png">
+					<span>5 min</span>
+				</div>
+			</a>
+			<a class="item item-avatar" href="javascript:;">
+				<img src="img/comment.png">
+				<h2>@JamesDeal</h2>
+				<p>Lorem ipsum dolor sit amet, comerdiconse ctetuer adipiscing elit. commodo ligula eget dolor. dolor sit amet</p>
+				<div class="date">
+					<img src="img/icono-date.png">
+					<span>5 min</span>
+				</div>
+			</a>
+		</div>
+	</ion-content>
+
+	<form name="sendMessageForm" ng-submit="sendMessage(sendMessageForm)" novalidate>
+		<ion-footer-bar class="bar-chat-footer bar-max-footer bkg-gris" align-title="center" keyboard-attach ng-style='{ bottom : data.keyboardHeight + "px" }'>
+		  <img class="img-footer" src="img/comment.png">
+		  <div class="title">
+		  	<textarea type="text" ng-model="input.message" value="" ng-focus="inputUp()" ng-blur="inputDown()" placeholder="Escribe un comentario" required minlength="1" maxlength="1500" msd-elastic></textarea>
+		  </div>
+		  <div class="buttons" ng-click="">
+		    <button class="button btn-chat" type="submit" ng-disabled="!input.message || input.message === ''">
+		    	<img src="img/icono-check.png">
+		    </button>
+		  </div>
+		</ion-footer-bar>
+	</form>
+
+	<div ng-include="'templates/drag-perfil.html'"></div>
+	<div ng-include="'templates/drag-search.html'"></div>
+	<div ng-include="'templates/trending-now.html'"></div>
+</ion-view>

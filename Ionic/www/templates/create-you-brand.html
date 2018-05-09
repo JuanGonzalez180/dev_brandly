@@ -1,0 +1,189 @@
+<div class="bkg-deg-brandly btn-close-popup" ng-click="cerrarPopupBrand()">
+	<img class="icono-cerrar" src="img/icono-cerrar.png">
+</div>
+<br><br>
+
+<span ng-if="data.create.step == 1">
+	<div>
+		<form class="list list-campos list-brand" novalidate>
+			<div class="padding">
+				<div href="javascript:;" class="css-round" ng-click="seleccionarTipo()">
+					Tipo de Marca
+				</div>
+			</div>
+		</form>
+		<div class="mg-form"></div>
+	</div>
+</span>
+
+<span ng-if="data.create.step == 2">
+	<div>
+		<form class="list list-campos list-brand" novalidate>
+			<div class="tcenter color-rojo btn-are-you">
+				<span ng-click="data.create.step = 1">Back</span>
+			</div>
+
+			<span ng-if="data.estado == 'lugar'">
+				<div class="padding">
+					<div href="javascript:;" class="css-round" ng-click="seleccionarCategoria()">
+						<span ng-if="data.lug_categoria">
+							{{data.lug_categoria}}
+						</span>
+						<span ng-if="!data.lug_categoria">
+							Elige una categoría
+						</span>
+					</div>
+				</div>
+				<label class="item item-input item-stacked-label" ng-class="">
+					<span class="ft-ms input-label">Nombre</span>
+					<input type="text" ng-model="data.lug_nombre" placeholder="Nombre del negocio o lugar">
+				</label>
+				<label class="item item-input item-stacked-label" ng-class="">
+					<span class="ft-ms input-label">Dirección</span>
+					<input type="text" ng-model="data.lug_direccion" placeholder="Dirección postal">
+				</label>
+				<label class="item item-input item-stacked-label" ng-class="">
+					<span class="ft-ms input-label">Ciudad/estado o provincia</span>
+					<input type="text" ng-model="data.lug_ciudad" placeholder="Ciudad/estado o provincia">
+				</label>
+				<label class="item item-input item-stacked-label" ng-class="">
+					<span class="ft-ms input-label">Código postal</span>
+					<input type="text" ng-model="data.lug_codigo" placeholder="Código postal">
+				</label>
+				<label class="item item-input item-stacked-label" ng-class="">
+					<span class="ft-ms input-label">Télefono</span>
+					<input type="text" ng-model="data.lug_telefono" placeholder="Télefono">
+				</label>
+			</span>
+			<span ng-if="data.estado == 'empresa'">
+				<div class="padding">
+					<div href="javascript:;" class="css-round" ng-click="seleccionarCategoria()">
+						<span ng-if="data.emp_categoria">
+							{{data.emp_categoria}}
+						</span>
+						<span ng-if="!data.emp_categoria">
+							Elige una categoría
+						</span>
+					</div>
+				</div>
+				<label class="item item-input item-stacked-label" ng-class="">
+					<span class="ft-ms input-label">Nombre</span>
+					<input type="text" ng-model="data.emp_nombre" placeholder="Nombre de la empresa">
+				</label>
+			</span>
+			<span ng-if="data.estado == 'marca'">
+				<div class="padding">
+					<div href="javascript:;" class="css-round" ng-click="seleccionarCategoria()">
+						<span ng-if="data.mar_categoria">
+							{{data.mar_categoria}}
+						</span>
+						<span ng-if="!data.mar_categoria">
+							Elige una categoría
+						</span>
+					</div>
+				</div>
+				<label class="item item-input item-stacked-label" ng-class="">
+					<span class="ft-ms input-label">Nombre</span>
+					<input type="text" ng-model="data.mar_nombre" placeholder="Nombre de la marca o del producto">
+				</label>
+			</span>
+			<span ng-if="data.estado == 'artista'">
+				<div class="padding">
+					<div href="javascript:;" class="css-round" ng-click="seleccionarCategoria()">
+						<span ng-if="data.art_categoria">
+							{{data.art_categoria}}
+						</span>
+						<span ng-if="!data.art_categoria">
+							Elige una categoría
+						</span>
+					</div>
+				</div>
+				<label class="item item-input item-stacked-label" ng-class="">
+					<span class="ft-ms input-label">Nombre</span>
+					<input type="text" ng-model="data.art_nombre" placeholder="Nombre">
+				</label>
+			</span>
+			<span ng-if="data.estado == 'entretenimiento'">
+				<div class="padding">
+					<div href="javascript:;" class="css-round" ng-click="seleccionarCategoria()">
+						<span ng-if="data.ent_categoria">
+							{{data.ent_categoria}}
+						</span>
+						<span ng-if="!data.ent_categoria">
+							Elige una categoría
+						</span>
+					</div>
+				</div>
+				<label class="item item-input item-stacked-label" ng-class="">
+					<span class="ft-ms input-label">Nombre</span>
+					<input type="text" ng-model="data.ent_nombre" placeholder="Nombre">
+				</label>
+			</span>
+			<span ng-if="data.estado == 'causa'">
+				<label class="item item-input item-stacked-label" ng-class="">
+					<span class="ft-ms input-label">Nombre</span>
+					<input type="text" ng-model="data.cau_nombre" placeholder="Nombre de la causa o de la comunidad">
+				</label>
+			</span>
+
+		</form>
+		<div class="mg-form"></div>
+
+		<div class="padding tcenter">
+			<ul class="list list-buttons list-buttons-onb">
+				<li class="item">
+				  <a href="javascript:;" ng-click="validarBrand()" class="button button-brandly bkg-deg-brandly cl-white btn-login">
+				    SUBMIT
+				  </a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</span>
+
+<span ng-if="data.create.step == 3">
+	<div>
+		<div class="tcenter color-rojo btn-are-you">
+			<span ng-click="data.create.step = 2">Back</span>
+		</div>
+		<div class="tcenter">Datos Personales</div>
+
+		<form class="list list-campos list-brand" novalidate>
+			<label class="item item-input item-stacked-label" ng-class="">
+				<span class="ft-ms input-label">Username</span>
+				<input type="text" ng-model="data.bra_username" placeholder="Enter your username">
+			</label>
+
+			<label class="item item-input item-stacked-label" ng-class="">
+				<span class="ft-ms input-label">Name</span>
+				<input type="text" ng-model="data.bra_nombre" placeholder="Enter your name">
+			</label>
+
+			<label class="item item-input item-stacked-label" ng-class="">
+				<span class="ft-ms input-label">E-mail</span>
+				<input type="text" ng-model="data.bra_email" placeholder="Enter your e-mail">
+			</label>
+
+			<label class="item item-input item-stacked-label" ng-class="">
+				<span class="ft-ms input-label">Password</span>
+				<input type="password" ng-model="data.bra_password" placeholder="Enter your password">
+			</label>
+
+			<label class="item item-input item-stacked-label" ng-class="">
+				<span class="ft-ms input-label">Password Confirm</span>
+				<input type="password" ng-model="data.bra_passwordRepeat" placeholder="Enter your password">
+			</label>
+		</form>
+		<div class="mg-form"></div>
+
+		<div class="padding tcenter">
+			<ul class="list list-buttons list-buttons-onb">
+				<li class="item">
+				  <a href="javascript:;" ng-click="createBrand()" class="button button-brandly bkg-deg-brandly cl-white btn-login">
+				    SUBMIT
+				  </a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</span>

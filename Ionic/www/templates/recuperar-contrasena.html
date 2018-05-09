@@ -1,0 +1,27 @@
+	<div class="bkg-deg-brandly btn-close-popup" ng-click="cerrarPopupPass()">
+		<img class="icono-cerrar" src="img/icono-cerrar.png">
+	</div>
+
+	<div class="tcenter">
+		<img class="icono-ok-brand" src="img/icono-new-password.png">
+
+		<form class="list list-campos list-brand tleft" novalidate>
+			<label class="item item-input item-stacked-label" ng-class="">
+				<span class="ft-ms input-label">E-mail</span>
+				<input type="text" ng-model="data.passemail" placeholder="Write your email">
+			</label>
+		</form>
+		<div class="padding tcenter">
+			<div class="textd">
+				We will send you a provisional password valid for 24 hours
+			</div>
+			<div class="mg-form"></div>
+			<ul class="list list-buttons list-buttons-onb">
+				<li class="item">
+				  <a href="javascript:;" ng-click="submitPassword()" class="button button-brandly bkg-deg-brandly cl-white btn-login">
+				    SUBMIT
+				  </a>
+				</li>
+			</ul>
+		</div>
+	</div>

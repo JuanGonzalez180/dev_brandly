@@ -1,0 +1,45 @@
+<div class="bkg-deg-brandly btn-close-popup" ng-click="cerrarPopupList()">
+	<img class="icono-cerrar" src="img/icono-cerrar.png">
+</div>
+
+<br><br>
+<div>
+	<div class="tit-modal">
+		{{selectTitulo}} <i class="ic-cen-select"></i>
+	</div>
+
+	<form class="list list-campos list-brand list-radio" novalidate>
+		<ion-scroll class="scroll-pais">
+			<ion-list delegate-handle="estadosSelect">
+				<ion-radio class="item-icon-left" ng-repeat="estado in estados" ng-value="estado.type" ng-change="seleccionarPedidos()" ng-model="data.estado">{{estado.nombre}}</ion-radio>
+			</ion-list>
+		</ion-scroll>
+	</form>
+	<div class="mg-form"></div>
+
+	<div class="padding tcenter">
+		<ul class="list list-buttons list-buttons-onb">
+			<li class="item">
+			  <a href="javascript:;" ng-click="seleccionarPedidos()" class="button button-brandly bkg-deg-brandly cl-white btn-login">
+			    SUBMIT
+			  </a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<!-- <ion-content class="bkg-center text-center no-has-header" scroll="false">
+	<div class="center-content-scroll">
+		<div class="tit-modal" ng-click="selectPais()">
+			{{selectTitulo}} <i class="ic-cen-select"></i>
+		</div>
+
+		<ion-scroll class="scroll-pais">
+			<ion-list delegate-handle="estadosSelect">
+				<ion-radio class="item-icon-left" ng-repeat="estado in estados" ng-value="estado.nombre" ng-model="data.estado">{{estado.nombre}}</ion-radio>
+			</ion-list>
+		</ion-scroll>
+
+		<a href="" ng-click="seleccionarPedidos()" class="button button-cen btn-wpop">Continuar</a>
+	</div>
+</ion-content> -->
