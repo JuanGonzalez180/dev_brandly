@@ -1,0 +1,40 @@
+<ion-view title="IonicVision" class="bkg-transp"
+  on-drag-up="dragOptionsPostUp($event)" 
+  >
+  <a href="javascript:;" ng-click="backPost()" class="left-b icono-back bkg-deg-brandly">
+    <img class="icono-back-brandly" src="img/icono-back.png">
+  </a>
+    <header class="bar bar-header bar-stable">
+        <h1 class="title">Post</h1>
+    </header>
+    <ion-content class="has-header has-footer bkg-transp tcenter">
+      <img class="pho-recuadro" src="img/pho-recuadro.png">
+    </ion-content>
+    <footer class="bar bar-footer foo-pho">
+      <button class="button button-clear" ng-click="changeFlashMode()">
+        <img class="flash" ng-if="!flash" src="img/pho-flash.png">
+        <img class="flash" ng-if="flash" src="img/pho-flash-on.png">
+      </button>
+      <div class="title">
+        <a href="javascript:;" class="progress-bar position left-b" 
+                on-tap="takePictureButton()"
+                on-hold="takeVideoButton()">
+          <div class="background" style=""></div>
+          <div class="rotate"></div>
+          <div class="left"></div>
+          <div class="right"></div>
+          <div class="">
+            <div class="left-b icono-back bkg-deg-brandly camera-photo-video" 
+                
+              >
+              <img class="icono-back-brandly" src="img/pho-camera-icon.png">
+            </div>
+          </div>
+        </a>
+      </div>
+      <button class="button button-clear" ng-click="switchCameraButton()">
+        <img class="camera" src="img/pho-camera.png">
+      </button>
+    </footer>
+    <div ng-controller="MovimientosCtrl"></div>
+</ion-view>

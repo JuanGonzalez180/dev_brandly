@@ -1,0 +1,40 @@
+<ion-view view-title="" 
+			on-drag-up="dragGeneralUp($event)" 
+			on-drag-down="dragGeneralDown($event)" 
+			on-drag-left="dragPerfilLeft($event)" 
+			on-drag-right="dragPerfilRight($event)" 
+      		>
+	<a href="#/scan-brand" class="left-b icono-back bkg-deg-brandly">
+	  <img class="icono-back-brandly" src="img/icono-back.png">
+	</a>
+	<ion-content>
+		<img class="img-watch-post" ng-src="{{brand.imgDesc}}">
+		<div class="flex-img-altern" ng-if="!brand.imgDesc && brand.img">
+			<img class="img-logo-watch profile watch-post-altern" ng-src="{{brand.img}}">
+		</div>
+		<div class="tcenter">
+			<!-- <img class="tit-watch-post" src="img/calvin-klein-logo.png"> -->
+			{{brand.name}}
+		</div>
+
+		<div class="padding tcenter">
+			<ul class="list list-buttons list-buttons-onb">
+				<li class="item">
+				  <a href="javascript:;" ng-click="watchDos()" class="button button-brandly bkg-deg-brandly cl-white btn-login">
+				    WATCH
+				  </a>
+				</li>
+
+				<li class="item">
+				  <a href="javascript:;" ng-click="post()" class="button button-brandly bkg-deg-brandly cl-white btn-login">
+				    POST
+				  </a>
+				</li>
+			</ul>
+		</div>
+	</ion-content>
+
+	<div ng-include="'templates/drag-perfil.html'"></div>
+	<div ng-include="'templates/drag-search.html'"></div>
+	<div ng-include="'templates/trending-now.html'"></div>
+</ion-view>

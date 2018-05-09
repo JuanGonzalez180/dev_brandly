@@ -1,0 +1,32 @@
+<ion-view title="IonicVision">
+	<a href="#/perfil/user-profile" class="left-b icono-back bkg-deg-brandly">
+	  <img class="icono-back-brandly" src="img/icono-back.png">
+	</a>
+    <header class="bar bar-header bar-stable">
+        <h1 class="title">Settings</h1>
+    </header>
+    <ion-content class="has-header">
+		<div class="title-seccion-set">
+			 Username
+		</div>
+
+		<form class="list list-campos list-campos-set" novalidate>
+			<label class="item item-input item-stacked-label item-login" ng-class="error.username">
+				<span class="ft-ms input-label">Username</span>
+				<input type="text" ng-model="user.username" placeholder="Write your username">
+				<small class="color-rojo">{{error}}</small>
+			</label>
+		</form>
+
+		<div class="padding tcenter">
+			<ul class="list list-buttons list-buttons-onb">
+				<li class="item">
+				  <a href="javascript:;" ng-click="guardarUsername()" class="button button-brandly bkg-deg-brandly cl-white btn-login">
+				    DONE
+				  </a>
+				</li>
+			</ul>
+		</div>
+
+	</ion-content>
+</ion-view>

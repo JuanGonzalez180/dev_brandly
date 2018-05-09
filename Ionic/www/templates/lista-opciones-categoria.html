@@ -1,0 +1,19 @@
+<div class="bkg-deg-brandly btn-close-popup" ng-click="cerrarPopupList()">
+	<img class="icono-cerrar" src="img/icono-cerrar.png">
+</div>
+
+<br><br>
+<div>
+	<div class="tit-modal">
+		{{selectTitulo}} <i class="ic-cen-select"></i>
+	</div>
+
+	<form class="list list-campos list-brand list-radio" novalidate>
+		<ion-scroll class="scroll-pais">
+			<ion-list delegate-handle="estadosSelect">
+				<ion-radio class="item-icon-left" ng-repeat="categoria in categorias" ng-change="cerrarPopupList()" ng-value="categoria" ng-model="data.categoria">{{categoria.nombre}}</ion-radio>
+			</ion-list>
+		</ion-scroll>
+	</form>
+	<div class="mg-form"></div>
+</div>

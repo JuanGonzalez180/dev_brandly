@@ -1,0 +1,99 @@
+<ion-view view-title="">
+	<img class="fondo-total" src="img/fondo.jpg">
+	<ion-content class="fondo-transp">
+		<div class="tcenter">
+			<img class="logo-login" src="img/logo.png">
+		</div>
+		<div class="btns-login tcenter" ng-if="!forgotPass">
+			<span ng-click="tab(1)" ng-class="{'active' : tabSign && !forgotPass}">Sign in</span> or <span ng-click="tab(2)" ng-class="{'active' : !tabSign && !forgotPass}">Log in</span>
+		</div>
+
+		<div ng-if="!tabSign && !forgotPass">
+			<form class="list list-campos" novalidate>
+				<label class="item item-input item-stacked-label item-login" ng-class="error.username">
+					<span class="ft-ms input-label">Username</span>
+					<img src="img/icono-username.png" class="icono-input">
+					<input type="text" ng-model="data.username" autocomplete="off" autocorrect="off" placeholder="Enter your username">
+				</label>
+
+				<label class="item item-input item-stacked-label item-login" ng-class="error.password">
+					<span class="ft-ms input-label">Password</span>
+					<img src="img/icono-password.png" class="icono-input">
+					<input type="password" ng-model="data.password" placeholder="Enter your password">
+				</label>
+			</form>
+
+			<div class="tcenter btn-forgot-pass">
+				<span ng-click="activeForgotPass()">Forgot password?</span>
+			</div>
+
+			<div class="padding tcenter">
+				<ul class="list list-buttons list-buttons-onb">
+					<li class="item">
+					  <a href="javascript:;" ng-click="login()" class="button button-brandly bkg-deg-brandly cl-white btn-login">
+					    LOG IN
+					  </a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="tcenter color-rojo btn-are-you">
+				<span ng-click="openModal()">¿ARE YOU A BRAND?</span> &nbsp; &nbsp;
+				<span ng-click="openModalCreateBrand()">CREATE BRAND</span>
+			</div>
+
+			<div class="button-bar btns-bar">
+				<a href="javascript:;" ng-click="iniciarFacebook()" class="button button-brandly mod bkg-facebook cl-white">
+					<img class="icono-rs-login" src="img/icono-facebook.png"> Log in facebook
+				</a>
+				<a href="javascript:;" ng-click="googleLogin()" class="button button-brandly mod bkg-gmail cl-white">
+					<img class="icono-rs-login" src="img/icono-gmail.png"> Log in gmail
+				</a>
+			</div>
+		</div>
+
+		<div ng-if="tabSign && !forgotPass">
+			<form class="list list-campos" novalidate>
+				<label class="item item-input item-stacked-label item-login" ng-class="error.username">
+					<span class="ft-ms input-label">Username</span>
+					<img src="img/icono-username.png" class="icono-input">
+					<input type="text" ng-model="data.username" autocomplete="off" autocorrect="off" placeholder="Enter your username">
+				</label>
+
+				<label class="item item-input item-stacked-label item-login" ng-class="error.name">
+					<span class="ft-ms input-label">Name</span>
+					<img src="img/icono-username.png" class="icono-input">
+					<input type="text" ng-model="data.name" placeholder="Enter your name">
+				</label>
+
+				<label class="item item-input item-stacked-label item-login" ng-class="error.email">
+					<span class="ft-ms input-label">E-mail</span>
+					<img src="img/icono-username.png" class="icono-input">
+					<input type="email" name="email" ng-model="data.email" placeholder="Enter your e-mail">
+				</label>
+
+				<label class="item item-input item-stacked-label item-login" ng-if="data.registerType == 'email' " ng-class="error.password">
+					<span class="ft-ms input-label">Password</span>
+					<img src="img/icono-password.png" class="icono-input">
+					<input type="password" ng-model="data.password" placeholder="Enter your password">
+				</label>
+
+				<label class="item item-input item-stacked-label item-login" ng-if="data.registerType == 'email' " ng-class="error.password">
+					<span class="ft-ms input-label">Password Confirm</span>
+					<img src="img/icono-password.png" class="icono-input">
+					<input type="password" ng-model="data.passwordRepeat" placeholder="Enter your password">
+				</label>
+			</form>
+
+			<div class="padding tcenter">
+				<ul class="list list-buttons list-buttons-onb">
+					<li class="item">
+					  <a href="javascript:;" ng-click="sigin()" class="button button-brandly bkg-deg-brandly cl-white btn-login">
+					    SIG IN
+					  </a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

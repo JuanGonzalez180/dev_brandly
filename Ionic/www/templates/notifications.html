@@ -1,0 +1,44 @@
+<ion-view title="IonicVision">
+	<a href="javascript:;" back-button class="left-b icono-back bkg-deg-brandly">
+	  <img class="icono-back-brandly" src="img/icono-back.png">
+	</a>
+    <header class="bar bar-header bar-stable">
+        <h1 class="title">Notifications</h1>
+    </header>
+    <ion-content class="has-header">
+		<div class="title-seccion-set">
+			<button class="button button-icon icon icon-delete-btn-noti" ng-click="shouldShowDelete = !shouldShowDelete; data.showReorder = false">
+				<i class="ion-ios-close-empty"></i>
+			</button>
+
+			5 new
+			<br>
+			<span class="ft-ml">Notifications</span>
+		</div>
+
+		<ion-list class="list list-comment list-notifications" show-delete="shouldShowDelete">
+			<ion-item class="item item-avatar item-icon-right">
+				<ion-delete-button class="ion-ios-close"></ion-delete-button>
+				<img src="img/comment.png">
+				<h2>Nicolle Smith</h2>
+				<p>Is now following you.</p>
+				<div class="date">
+					<img src="img/icono-date.png">
+					<span>5 min</span>
+				</div>
+			</ion-item>
+			<ion-item class="item item-avatar item-icon-right">
+				<ion-delete-button class="ion-ios-close"></ion-delete-button>
+				<img src="img/comment.png">
+				<h2>Kitty L19</h2>
+				<p>Han mentioned you on a comment</p>
+				<div class="date">
+					<img src="img/icono-date.png">
+					<span>5 min</span>
+				</div>
+			</ion-item>
+		</ion-list>
+		<div class="tcenter no-more">No more notifications</div>
+
+    </ion-content>
+</ion-view>

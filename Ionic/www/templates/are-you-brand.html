@@ -1,0 +1,80 @@
+	<div class="bkg-deg-brandly btn-close-popup" ng-click="cerrarPopup()">
+		<img class="icono-cerrar" src="img/icono-cerrar.png">
+	</div>
+
+	<div ng-if="!marcaBrand && !okBrand">
+		<h1 class="title">Which brand are you?</h1>
+		<div class="buscador">
+			<div class="bkg-deg-brandly icono-buscador ">
+				<img class="icono-buscador-w" src="img/icono-buscador.png">
+			</div>
+			<div class="input-buscador"> <input type="text" ng-model="data.buscador" placeholder="which brand are you?"> </div>
+			<div class="cerrar-buscador" ng-click="limpiarBuscador()">
+				<img class="icono-cerrar-buscador" src="img/icono-cerrar-buscador.png">
+			</div>
+		</div>
+
+		<div class="mg-buscador"></div>
+		<div class="scroll-elements">
+			<div class="list list-buscador">
+				<!-- <a ng-click="marcaClick(marca)" class="item item-avatar" href="javascript:;" ng-repeat="marca in data.marcas">
+					<img ng-src="{{marca.img}}">
+					<h2 class="ft-ms">{{marca.nombre}}</h2>
+					<i class="icon ion-chevron-right icon-accessory"></i>
+				</a> -->
+			</div>
+		</div>
+		<div class="fondo-footer tcenter">
+			<img class="icono-cara" src="img/icono-cara.png">
+			<div>¿Isn´t your brand here?</div>
+			<div class="tcenter color-rojo2 btn-are-you ft-mb">
+				<span ng-click="">ACTIVATE IT</span>
+			</div>
+			<img class="icono-flecha" src="img/icono-flecha.png">
+		</div>
+	</div>
+
+	<div ng-if="marcaBrand && !okBrand">
+		<div class="tcenter">
+			<img class="img-marca" ng-src="{{marcaActive.img}}">
+			<h1 class="title mod">{{marcaActive.nombre}}</h1>
+		</div>
+
+		<form class="list list-campos list-brand" novalidate>
+			<label class="item item-input item-stacked-label" ng-class="">
+				<input type="text" ng-model="data.username" placeholder="Name">
+			</label>
+
+			<label class="item item-input item-stacked-label" ng-class="error.username">
+				<input type="text" ng-model="data.username" placeholder="Email">
+			</label>
+
+			<label class="item item-input item-stacked-label" ng-class="error.username">
+				<input type="text" ng-model="data.username" placeholder="Contact number">
+			</label>
+		</form>
+		<div class="mg-form"></div>
+
+		<div class="padding tcenter">
+			<ul class="list list-buttons list-buttons-onb">
+				<li class="item">
+				  <a href="javascript:;" ng-click="submit()" class="button button-brandly bkg-deg-brandly cl-white btn-login">
+				    SUBMIT
+				  </a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div ng-if="okBrand">
+		<div class="tcenter">
+			<img class="icono-ok-brand" src="img/icono-ok-brand.png">
+			<div class="color-deg-text">
+				Well <span>Done!</span>
+			</div>
+			<div class="textd">
+				Our costumer service will get in touch with you to complete the process.
+			</div>
+			<div class="mg-form"></div>
+		</div>
+	</div>

@@ -1,0 +1,66 @@
+<ion-view view-title="" 
+      on-drag-up="dragGeneralUp($event)" 
+      on-drag-down="dragGeneralDown($event)" 
+      on-drag-left="dragPerfilLeft($event)" 
+      on-drag-right="dragPerfilRight($event)" 
+      class="bkg-transp"
+          >
+          
+    <a href="javascript:;" ng-click="actionNotifications()" class="icono-back bkg-deg-brandly" ng-if="notificaciones.numero">
+      {{notificaciones.numero}}
+    </a>
+    <header class="bar bar-header bar-stable">
+        <h1 class="title"></h1>
+    </header>
+    <ion-content class="has-header" scroll="false">
+        <div on-tap="tomarFotoNueva()">
+          <div id="canvas"></div>
+        </div>
+        <!-- <div ng-if="current_image" class="bg-scan" style="background-image: url({{current_image}});"></div> -->
+        <!-- <div ng-if="!current_image" class="bg-scan bkg-deg-brandly"></div> -->
+
+        <!-- <div class="productos-cart">
+          <div class="content-productos list content-cart-productos">
+            <div href="javascript:;"
+              class="producto producto-valores img-principal" 
+              ng-repeat="value in [1,2,3,4,5,6]"
+              >
+                <div class="img-sbrand">
+                  <img src="img/perfil-brand-scan-{{value}}.jpg">
+                </div>
+                <div>Joseph</div>
+            </div>
+          </div>
+        </div> -->
+            
+        <a class="btn-scan-brand camera" 
+            ng-class="{ 'btns-scans-up' : trendingBottom==10}" 
+            ng-click="tomarFotoNueva()" 
+            href="javascript:;">
+          <img src="img/icono-camara.png">
+        </a>
+        <a class="btn-scan-brand list-brandly" 
+            ng-class="{ 'btns-scans-up' : trendingBottom==10}" 
+            ng-click="clickEscaneadas(itemsLogos)" 
+            ng-if="current_image"
+            href="javascript:;">
+          <img src="img/icono-list-brandly.png">
+        </a>
+
+      <div class="transition btns-scans" ng-class="{ 'btns-scans-up' : trendingBottom==10}">
+        <div class="row">
+          <div class="col">
+          </div>
+          <div class="col tright">
+          </div>
+        </div>
+      </div>
+    </ion-content>
+
+
+    
+    <div ng-include="'templates/drag-perfil.html'"></div>
+    <div ng-include="'templates/drag-search.html'"></div>
+    <div ng-include="'templates/trending-now.html'"></div>
+
+</ion-view>

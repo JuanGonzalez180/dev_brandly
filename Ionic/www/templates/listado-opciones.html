@@ -1,0 +1,25 @@
+<ion-content scroll="false">
+	<a href="javascript:;" class="a-btn-close" ng-click="cerrarPopup()"> 
+		<h4 class="cl-white">Cancelar</h4>
+	</a>
+	<h2 class="padding">{{popup.titulo}}</h2>
+
+	<ion-scroll>
+		<ion-list>
+			<ion-radio class="item-icon-left" ng-repeat="opcion in popup.opciones" ng-model="data.estado" ng-value="opcion.id" ng-if="opcion.id">
+				{{opcion.value}}
+			</ion-radio>
+		</ion-list>
+	</ion-scroll>
+
+	<div class="padding">
+		<div class="padding">
+			<a href="javascript:;" class="button button-block button-uku hei-mod" ng-click="seleccionarOpcion(popup.tipo, popup.opciones)" ng-if="popup.button">
+				{{popup.button}}
+			</a>
+			<a href="javascript:;" class="button button-block button-uku hei-mod mod-transparent" ng-click="seleccionarOpcion2()" ng-if="popup.button2">
+				{{popup.button2}}
+			</a>
+		</div>
+	</div>
+</ion-content>

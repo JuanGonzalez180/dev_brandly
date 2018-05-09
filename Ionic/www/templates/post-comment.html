@@ -1,0 +1,39 @@
+<ion-view  title="Post Comment" class="bkg-transp">
+
+  <a href="javascript:;" ng-click="irPost()" class="left-b icono-back bkg-deg-brandly">
+    <img class="icono-back-brandly" src="img/icono-back.png">
+  </a>
+  <a href="javascript:;" ng-click="actionBrandProfilePost()" class="icono-back bkg-deg-brandly">
+    <img class="icono-cerrar" src="img/icono-shop.png">
+  </a>
+  <header class="bar bar-header bar-stable">
+      <h1 class="title">Post</h1>
+  </header>
+  <ion-content class="has-post-comment" style="background-image: url({{imagePhoto}}); background-position: center; background-repeat: no-repeat; background-size: cover;">
+    <!-- poster="img/loading.jpg"  -->
+    <video class="video-post" 
+          controls='controls' 
+          poster="{{imagePhotoVideo}}" 
+          ng-if="videoPost" 
+          autoplay 
+          style="height: {{height}}">
+      <source src="{{videoPost}}" type='video/mp4'>
+    </video>
+
+  </ion-content>
+
+
+  <form name="sendMessageForm" ng-submit="sendMessage(sendMessageForm)" novalidate>
+    <ion-footer-bar class="bar bar-footer foo-pho bar-chat-footer bkg-gris" align-title="center" keyboard-attach ng-style='{ bottom : data.keyboardHeight + "px" }'>
+      <div class="bar-progress transition" style="width: {{widthProgress}}%"></div>
+      <div class="comment-pic">
+        <img class="img-footer" ng-src="{{user.imgPerfil}}">
+        <textarea type="text" ng-model="message" value="" ng-focus="inputUp()" ng-blur="inputDown()" placeholder="Escribe un comentario" required minlength="1" maxlength="1500" msd-elastic></textarea>
+      </div>
+      
+      <a href="javascript:;" class="a-done" ng-click="savePost()">
+        <img src="img/done.png" class="done">
+      </a>
+    </ion-footer-bar>
+  </form>
+</ion-view>
